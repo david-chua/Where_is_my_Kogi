@@ -1,0 +1,20 @@
+{
+  "name": "where_is_my_kogi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/david-chua/Where_is_my_Kogi.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/david-chua/Where_is_my_Kogi/issues"
+  },
+  "homepage": "https://github.com/david-chua/Where_is_my_Kogi#readme"
+}
