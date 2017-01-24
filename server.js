@@ -15,16 +15,21 @@ var app = express();
 
 mongoose.connect('mongodb://localhost/where_is_my_kogi');
 
+app.set(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:true}));
+app.use(express.static("public"));
+app.use(logger('dev'));
+app.use(methodOverride('_method'));
 
-var db = mongoose.connection;
+app.use(session({
+  secret: "MeatisLife",
+  resave: false,
+  saveUninitialized: false
+}));
 
-db.on('error', function(err){
-  console.log(err);
-});
-
-db.once('open', function(){
-  console.log("Let me see my meat options!");
-});
+app.use('/users', usersController);
+app.use('/sessions', sessionsController);
+app.use('/users/:id/restaurants', restaurantController);
 
 app.listen(3000, function(){
   console.log("App is connected, find your nearest KBBQ!");
