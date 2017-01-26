@@ -13,7 +13,8 @@ var restaurantController = require('./controllers/restaurant.js');
 
 var app = express();
 
-mongoose.connect('mongodb://localhost/where_is_my_kogi');
+var mongoURI = process.env.MONGODB_URI || 'mongodb://localhost/where_is_my_kogi';
+mongoose.connect(mongoURI);
 
 app.set(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
@@ -35,6 +36,6 @@ app.get('/', function(req,res){
   res.render('home/homepage.hbs');
 });
 
-app.listen(3000, function(){
+app.listen(process.env.PORT || 3000, function(){
   console.log("App is connected, find your nearest KBBQ!");
 });
