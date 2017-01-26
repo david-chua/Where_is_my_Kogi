@@ -1,8 +1,12 @@
-<h1> Hello There {{user.username}} </h1>
+<h1> Hello There {{user.name}} </h1>
+
+<ul>
+  <li>Name: {{user.name}}</li>
+  <li>Email: {{user.email}}</li>
+  <li> {{user.restaurants.name}} </li>
 
 
-
-<form action="/users/show" method="post">
+<form action="/users/show.hbs" method="post">
   <input type="text" name="name" value="Name"><br>
   <input type="text" name="phone" value="Phone Number"><br>
   <input type="text" name="address" value="Address"><br>
@@ -11,6 +15,7 @@
   <input type="text" name="zip" value="Zip Code"><br>
   <input type="text" name="mfhours" value="Monday - Friday Hours"><br>
   <input type="text" name="sathours" value="Saturday Hours"><br>
+  <input type="text" name="sunhours" value="Sunday Hours"><br>
   <input type="text" name="most_popular" value="Popular Dish"><br>
   <input type="text" name="favorite_dish" value="My Favorite Dish"><br>
   <input type="submit" value="Submit Restaurant Info"><br>
