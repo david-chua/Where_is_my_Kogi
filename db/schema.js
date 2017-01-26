@@ -6,13 +6,16 @@ mongoose.Promise = global.Promise;
 //Restaurant Schema
 var RestaurantSchema = new Schema({
   name: String,
+  phone: String,
   address: String,
   city: String,
-  State: String,
-  Zip: Number,
-  Hours: String,
-  Most_Popular: String,
-  Favorite_Dish: String
+  state: String,
+  zip: Number,
+  mfhours: String,
+  sathours: String,
+  sunhours: String,
+  most_popular: String,
+  favorite_dish: String
 });
 
 var UserSchema = new Schema({

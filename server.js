@@ -31,6 +31,10 @@ app.use('/users', usersController);
 app.use('/sessions', sessionsController);
 app.use('/users/:id/restaurants', restaurantController);
 
+app.get('/', function(req,res){
+  res.render('home/homepage.hbs');
+});
+
 app.listen(3000, function(){
   console.log("App is connected, find your nearest KBBQ!");
 });
