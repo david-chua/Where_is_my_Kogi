@@ -16,6 +16,14 @@ var app = express();
 var mongoURI = process.env.MONGODB_URI || 'mongodb://localhost/where_is_my_kogi';
 mongoose.connect(mongoURI);
 
+// db.on('error', function(err){
+//   console.log(err);
+// });
+//
+// db.once('open', function({
+//   console.log('database connected')
+// });
+
 app.set(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static("public"));

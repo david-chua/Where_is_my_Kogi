@@ -1,8 +1,9 @@
 var express = require('express');
 router = express.Router();
-var User = require('../models/user.js');
+var mongoose = require('mongoose');
+var User = require('../models/user.js')
+var Restaurant = require('../models/restaurant.js');
 var authHelpers = require('../helpers/auth.js');
-
 
 //LOG-IN
 router.get('/login', function(req, res){

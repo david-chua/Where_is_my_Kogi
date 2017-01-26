@@ -6,7 +6,7 @@ var Restaurant = require('../models/restaurant.js');
 var authHelpers = require('../helpers/auth.js');
 
 // Adding a new Restaurant
-router.post('/', authHelpers.createSecure, function(req, res){
+router.post('/', function(req, res){
 var restaurant = new Restaurant({
       name: req.body.name,
       phone: req.body.phone,
@@ -20,11 +20,15 @@ var restaurant = new Restaurant({
       most_popular: req.body.most_popular,
       favorite_dish: req.body.favorite_dish
     });
-      restaurant.save(function(err, restaurant){
-        if (err) console.log(err);
-        res.redirect('/users/:id/restaurant')
-      })
+
+  User.findById(req.session.currentUser._id)
+  .exec(function(err, user){
+    if (err) {console.log(err);}
+    user.products.push(product);
+    user.save();
+    res.send(user);
   });
+});
 
 //Get route to render an edit page
   router.get('/:id/edit', function(req,res){
@@ -33,7 +37,7 @@ var restaurant = new Restaurant({
 
   //Update that saves the changes of the edit
 router.put('/:id', function(req,res){
-  List.findByIDAndUpdate(req.params.id, {
+  restaurant.findByIDAndUpdate(req.params.id, {
     name: req.body.name,
     phone: req.body.phone,
     address: req.body.address,
@@ -52,6 +56,7 @@ router.put('/:id', function(req,res){
     res.send(restaurant);
   });
 });
+
 
 //Removing a Restaurant from the list
 router.delete('/:userId/items/:id', function(req,res){

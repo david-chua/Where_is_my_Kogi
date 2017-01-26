@@ -1,15 +1,13 @@
-<h1> Hello There {{user.name}} </h1>
-
-<ul>
-  <li>Name: {{user.name}}</li>
-  <li>Email: {{user.email}}</li>
-  <li> {{user.restaurants.name}} </li>
-
-
-<!-- <a href="../_id/edit"> New Restaurant </a> -->
-
-
-<!-- <form action="/users/:id" method="post">
+<form action="/users/:id/restaurants" method="POST">
+  <div>
+    <label for="name"> Name </label>
+    <input type="text" name="Name">
+  </div>
+  <div>
+    <label for="phone"> Phone Number </label>
+    <input type="text" name="Phone Number">
+  </div>
+  
   <input type="text" name="name" value="Name"><br>
   <input type="text" name="phone" value="Phone Number"><br>
   <input type="text" name="address" value="Address"><br>
@@ -22,4 +20,4 @@
   <input type="text" name="most_popular" value="Popular Dish"><br>
   <input type="text" name="favorite_dish" value="My Favorite Dish"><br>
   <input type="submit" value="Submit Restaurant Info"><br>
-</form> -->
+</form>
