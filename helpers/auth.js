@@ -32,8 +32,8 @@ function loginUser(req, res, next) {
 
 //authorize function
 function authorize(req, res,next){
-  var currentUser = req.session.currentUser
-  if (!currentUser || currentUser._id !== req.params.id){
+
+  if (!req.session.currentUser || req.session.currentUser._id !== req.params.id){
     res.send({status: 404})
   } else{
     next()

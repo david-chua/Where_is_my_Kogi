@@ -7,48 +7,49 @@ var authHelpers = require('../helpers/auth.js');
 
 // Adding a new Restaurant
 router.post('/', function(req, res){
-var restaurant = new Restaurant({
-      name: req.body.name,
-      phone: req.body.phone,
-      address: req.body.address,
-      city: req.body.city,
-      state: req.body.state,
-      zip: req.body.zip,
-      mfhours: req.body.mfhours,
-      sathours: req.body.sathours,
-      sunhours: req.body.sunhours,
-      most_popular: req.body.most_popular,
-      favorite_dish: req.body.favorite_dish
-    });
-
-  User.findById(req.session.currentUser._id)
-  .exec(function(err, user){
-    if (err) {console.log(err);}
-    user.products.push(product);
+ User.findById(req.session.currentUser._id)
+ .exec(function(err, user){
+   if(err) {console.log(err)}
+   user.restaurants.push({
+     name: req.body.name,
+     phone: req.body.phone,
+     address: req.body.address,
+     city: req.body.city,
+     state: req.body.state,
+     zip: req.body.zip,
+     mfhours: req.body.mfhours,
+     sathours: req.body.sathours,
+     sunhours: req.body.sunhours,
+     most_popular: req.body.most_popular,
+     favorite_dish: req.body.favorite_dish
+    })
     user.save();
-    res.send(user);
+
+    res.redirect("/users/" + req.session.currentUser._id);
   });
 });
 
-//Get route to render an edit page
-  router.get('/:id/edit', function(req,res){
-    res.render('restaurants/edit.hbs');
-  })
 
-  //Update that saves the changes of the edit
+//Get route to render an edit page
+  // router.get('/:id/edit', function(req,res){
+  //   res.render('restaurants/edit.hbs');
+  // })
+
+  // Update that saves the changes of the edit
 router.put('/:id', function(req,res){
-  restaurant.findByIDAndUpdate(req.params.id, {
-    name: req.body.name,
-    phone: req.body.phone,
-    address: req.body.address,
-    city: req.body.city,
-    state: req.body.state,
-    zip: req.body.zip,
-    mfhours: req.body.mfhours,
-    sathours: req.body.sathours,
-    sunhours: req.body.sunhours,
-    most_popular: req.body.most_popular,
-    favorite_dish: req.body.favorite_dish
+  restaurant.findByIDAndUpdate(req.params.id)
+  .exec(function(err, restaurant){
+    // restaurant.name: req.body.name;
+    // restaurant.phone: req.body.phone;
+    // restaurant.address: req.body.address;
+    // restaurant.city: req.body.city;
+    // restaurant.state: req.body.state;
+    // restaurant.zip: req.body.zip;
+    // restaurant.mfhours: req.body.mfhours;
+    // restaurant.sathours: req.body.sathours;
+    // restaurant.sunhours: req.body.sunhours;
+    // restaurant.most_popular: req.body.most_popular;
+    // restaurant.favorite_dish: req.body.favorite_dish;
   }, {new: true})
   .exec(function(err, restaurant){
     if(err) {console.log(err);}

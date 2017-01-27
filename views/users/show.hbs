@@ -1,25 +1,37 @@
+<br>
+<br>
+<br>
+<br>
 <h1> Hello There {{user.name}} </h1>
+
+
 
 <ul>
   <li>Name: {{user.name}}</li>
   <li>Email: {{user.email}}</li>
-  <li> {{user.restaurants.name}} </li>
+
+</ul>
+
+{{#each user.restaurants}}
+<ul>
+  <li>{{this.name}}</li>
+</ul>
+{{/each}}
 
 
-<!-- <a href="../_id/edit"> New Restaurant </a> -->
 
-
-<!-- <form action="/users/:id" method="post">
-  <input type="text" name="name" value="Name"><br>
-  <input type="text" name="phone" value="Phone Number"><br>
-  <input type="text" name="address" value="Address"><br>
-  <input type="text" name="city" value="City"><br>
-  <input type="text" name="state" value="State"><br>
-  <input type="text" name="zip" value="Zip Code"><br>
-  <input type="text" name="mfhours" value="Monday - Friday Hours"><br>
-  <input type="text" name="sathours" value="Saturday Hours"><br>
-  <input type="text" name="sunhours" value="Sunday Hours"><br>
-  <input type="text" name="most_popular" value="Popular Dish"><br>
-  <input type="text" name="favorite_dish" value="My Favorite Dish"><br>
-  <input type="submit" value="Submit Restaurant Info"><br>
-</form> -->
+<h2> Found a new KBBQ restaurant? </h2>
+<form action="/users/{{user.id}}/restaurants" method="post">
+  <input type="text" name="name" placeholder="Name"><br>
+  <input type="text" name="phone" placeholder="Phone Number"><br>
+  <input type="text" name="address" placeholder="Address"><br>
+  <input type="text" name="city" placeholder="City"><br>
+  <input type="text" name="state" placeholder="State"><br>
+  <input type="text" name="zip" placeholder="Zip Code"><br>
+  <input type="text" name="mfhours" placeholder="Monday - Friday Hours"><br>
+  <input type="text" name="sathours" placeholder="Saturday Hours"><br>
+  <input type="text" name="sunhours" placeholder="Sunday Hours"><br>
+  <input type="text" name="most_popular" placeholder="Popular Dish"><br>
+  <input type="text" name="favorite_dish" placeholder="My Favorite Dish"><br>
+  <input type="submit" value="Submit Restaurant Info"> <br>
+</form>
