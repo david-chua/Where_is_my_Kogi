@@ -16,7 +16,7 @@ router.post('/login', authHelpers.loginUser, function(req, res){
 
 router.delete('/', function(req, res) {
   req.session.destroy(function(){
-    res.redirect('/users');
+    res.redirect('../');
   });
 });
 
