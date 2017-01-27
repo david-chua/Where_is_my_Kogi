@@ -59,15 +59,15 @@ router.post('/', function(req, res){
 
 
 //Removing a Restaurant from the list
-router.delete('/:userId/items/:id', function(req,res){
-  User.findByIdAndUpdate(req.params.userId, {
+router.delete('/:id', function(req,res){
+  User.findByIdAndUpdate(req.session.currentUser._id, {
     $pull:{
      restaurants: {_id: req.params.id}
     }
   })
   .exec(function(err,restaurant){
     if(err) console.log(err);
-    res.send (restaurant + "Deleted");
+    res.redirect('/users/' + req.session.currentUser._id);
   });
 });
 
