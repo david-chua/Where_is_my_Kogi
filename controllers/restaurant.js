@@ -30,15 +30,15 @@ router.post('/', function(req, res){
 });
 
 
-//Get route to render an edit page
+// Get route to render an edit page
   // router.get('/:id/edit', function(req,res){
   //   res.render('restaurants/edit.hbs');
   // })
 
   // Update that saves the changes of the edit
-router.put('/:id', function(req,res){
-  restaurant.findByIDAndUpdate(req.params.id)
-  .exec(function(err, restaurant){
+// router.put('/:id', function(req,res){
+//   restaurant.findByIDAndUpdate(req.params.id)
+//   .exec(function(err, restaurant){
     // restaurant.name: req.body.name;
     // restaurant.phone: req.body.phone;
     // restaurant.address: req.body.address;
@@ -50,13 +50,13 @@ router.put('/:id', function(req,res){
     // restaurant.sunhours: req.body.sunhours;
     // restaurant.most_popular: req.body.most_popular;
     // restaurant.favorite_dish: req.body.favorite_dish;
-  }, {new: true})
-  .exec(function(err, restaurant){
-    if(err) {console.log(err);}
-    console.log(restaurant);
-    res.send(restaurant);
-  });
-});
+//   }, {new: true})
+//   .exec(function(err, restaurant){
+//     if(err) {console.log(err);}
+//     console.log(restaurant);
+//     res.send(restaurant);
+//   });
+// });
 
 
 //Removing a Restaurant from the list
