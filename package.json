@@ -30,6 +30,6 @@
     "method-override": "^2.3.7",
     "mongoose": "^4.7.8",
     "morgan": "^1.7.0",
-    "pryjs": "^1.0.3",
+    "pryjs": "^1.0.3"
   }
 }
