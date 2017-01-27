@@ -31,32 +31,31 @@ router.post('/', function(req, res){
 
 
 // Get route to render an edit page
-  // router.get('/:id/edit', function(req,res){
-  //   res.render('restaurants/edit.hbs');
-  // })
-
+  router.get('/:id/edit', function(req,res){
+    res.render('restaurants/edit.hbs');
+  })
+  //
   // Update that saves the changes of the edit
-// router.put('/:id', function(req,res){
-//   restaurant.findByIDAndUpdate(req.params.id)
-//   .exec(function(err, restaurant){
-    // restaurant.name: req.body.name;
-    // restaurant.phone: req.body.phone;
-    // restaurant.address: req.body.address;
-    // restaurant.city: req.body.city;
-    // restaurant.state: req.body.state;
-    // restaurant.zip: req.body.zip;
-    // restaurant.mfhours: req.body.mfhours;
-    // restaurant.sathours: req.body.sathours;
-    // restaurant.sunhours: req.body.sunhours;
-    // restaurant.most_popular: req.body.most_popular;
-    // restaurant.favorite_dish: req.body.favorite_dish;
-//   }, {new: true})
-//   .exec(function(err, restaurant){
-//     if(err) {console.log(err);}
-//     console.log(restaurant);
-//     res.send(restaurant);
-//   });
-// });
+  router.put('/:id', function(req, res) {
+    restaurant.findByIDAndUpdate(req.params.id, {
+      name: req.body.name,
+      phone: req.body.phone,
+      address: req.body.address,
+      city: req.body.city,
+      state: req.body.state,
+      zip: req.body.zip,
+      mfhours: req.body.mfhours,
+      sathours: req.body.sathours,
+      sunhours: req.body.sunhours,
+      most_popular: req.body.most_popular,
+      favorite_dish: req.body.favorite_dish
+    }, {new: true})
+    .exec(function(err, donut){
+      if(err) {console.log(err);}
+      console.log(restaurant);
+      res.redirection('/:id');
+    });
+  });
 
 
 //Removing a Restaurant from the list
@@ -71,13 +70,6 @@ router.delete('/:userId/items/:id', function(req,res){
     res.send (restaurant + "Deleted");
   });
 });
-
-
-
-
-
-
-
 
 
 
