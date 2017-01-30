@@ -44,6 +44,10 @@ app.get('/', function(req,res){
   res.render('home/homepage.hbs');
 });
 
+app.get('/about', function(req,res){
+  res.render('About/Aboutpage.hbs');
+})
+
 app.listen(process.env.PORT || 3000, function(){
   console.log("App is connected, find your nearest KBBQ!");
 });

@@ -80,3 +80,23 @@ ul#nabar li.icon {
 .h1index {
   text-align: center;
 }
+
+
+/*aboutpage*/
+
+.h1about {
+  text-align: center;
+}
+
+.h2about{
+  text-align: center;
+}
+
+.h3about {
+  text-align: center;
+  font-size: 1.3em;
+}
+.primerib img {
+  margin: 0 auto;
+  display: block;
+}
