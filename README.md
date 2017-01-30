@@ -31,6 +31,8 @@ User: {
 
 Each user will have their name, username, email, and password, and a collection of restaurants that they've been at.
 
+https://github.com/david-chua/Where_is_my_Kogi/blob/master/UserStory.md
+
 As for my wireframes. I wanted to keep it simple. Just have the basic routing to work before I design my application.
 
-![Wireframe](./public/css/images/thumbnail_WireFrame_Page.png)
+![Wireframe](/public/css/images/thumbnail_WireFrame_Page.png)
