@@ -1,14 +1,14 @@
 <form action="/users/{{user.id}}/restaurants/{{restaurant.id}}?_method=PUT" method="POST">
-  <input type="text" name="name" value="Name"><br>
-  <input type="text" name="phone" value="Phone Number"><br>
-  <input type="text" name="address" value="Address"><br>
-  <input type="text" name="city" value="City"><br>
-  <input type="text" name="state" value="State"><br>
-  <input type="text" name="zip" value="Zip Code"><br>
-  <input type="text" name="mfhours" value="Monday - Friday Hours"><br>
-  <input type="text" name="sathours" value="Saturday Hours"><br>
-  <input type="text" name="sunhours" value="Sunday Hours"><br>
-  <input type="text" name="most_popular" value="Popular Dish"><br>
-  <input type="text" name="favorite_dish" value="My Favorite Dish"><br>
+  <input type="text" name="name" value= {{restaurant.name}}><br>
+  <input type="text" name="phone" value={{restaurant.phone}}><br>
+  <input type="text" name="address" value={{restaurant.address}}><br>
+  <input type="text" name="city" value={{restaurant.city}}><br>
+  <input type="text" name="state" value={{restaurant.state}}><br>
+  <input type="text" name="zip" value={{restaurant.zip}}><br>
+  <input type="text" name="mfhours" value={{restaurant.mfhours}}><br>
+  <input type="text" name="sathours" value={{restaurant.sathours}}><br>
+  <input type="text" name="sunhours" value={{restaurant.sunhours}}><br>
+  <input type="text" name="most_popular" value={{restaurant.most_popular}}><br>
+  <input type="text" name="favorite_dish" value={{restaurant.favorite_dish}}><br>
   <input type="submit" value="Submit Edited Restaurant Info"><br>
 </form>

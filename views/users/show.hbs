@@ -16,19 +16,21 @@
 </ul>
 
 {{#each user.restaurants}}
-<ul>
-  <li>{{this.name}}</li>
+<div class="restaurantDiv">
+  <p>{{this.name}}</p>
+  <p>{{this.city}}</p>
   <form action="/users/{{../user.id}}/restaurants/{{_id}}?_method=DELETE" method="POST">
     <input type="submit" value="delete this restaurant">
   </form>
   <form action="/users/{{../user.id}}/restaurants/{{_id}}/edit" method="GET">
     <input type="submit" value="Edit this restaurant">
   </form>
-
+</div>
 {{/each}}
 
 
 
+<div class="newRestaurant">
 <h2> Found a new KBBQ restaurant? </h2>
 <form action="/users/{{user.id}}/restaurants" method="post">
   <input type="text" name="name" placeholder="Name"><br>
@@ -44,3 +46,4 @@
   <input type="text" name="favorite_dish" placeholder="My Favorite Dish"><br>
   <input type="submit" value="Submit Restaurant Info"> <br>
 </form>
+</div>

@@ -100,3 +100,12 @@ ul#nabar li.icon {
   margin: 0 auto;
   display: block;
 }
+
+.restaurantDiv{
+  float: left;
+}
+
+.newRestaurant{
+  padding-top: 30px;
+  clear: both;
+}
